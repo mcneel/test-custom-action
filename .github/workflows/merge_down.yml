@@ -4,6 +4,7 @@ on:
 
 jobs:
   merge_down:
+    runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
       - name: Hello world action step
