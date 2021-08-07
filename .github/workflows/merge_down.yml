@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: pearswj/hello-world-javascript-action@main
+      - uses: pearswj/merge-down-action@main
         with:
-          who-to-greet: 'Mona the Octocat'
           # token: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.PAT }}
       # Use the output from the `hello` step
