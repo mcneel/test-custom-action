@@ -1,0 +1,14 @@
+name: build2
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: test ${{ github.event_name }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo "${{ github }}"
