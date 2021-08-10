@@ -3,7 +3,8 @@ on: [push, pull_request]
 
 jobs:
   test:
-    name: test (${{ github.event_name }})
+#     name: test (${{ github.event_name }})
+    name: test
     runs-on: ubuntu-latest
 
     steps:
