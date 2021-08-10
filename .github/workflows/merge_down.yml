@@ -8,7 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+      - name: Get token
+        id: my-app
+        uses: getsentry/action-github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: mcneel/merge-down-action@v1
         with:
-          # token: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ secrets.PAT }}
+          token: ${{ steps.my-app.outputs.token }}
