@@ -1,15 +1,15 @@
 name: build2
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   test:
 #     name: test (${{ github.event_name }})
-    name: test
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+#       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "${{ toJson(github) }}"
+#         run: echo "${{ toJson(github) }}"
+        run: echo "Hello World!"
